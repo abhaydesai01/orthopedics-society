@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Search } from 'lucide-react'
+import { Search, Menu, X } from 'lucide-react'
 import { Button } from './ui/Button'
 import { SearchModal } from './SearchModal'
 import {
@@ -17,14 +17,12 @@ const navigationItems = [
   { name: "Office Bearers", href: "/office-bearers" },
   { name: "Members", href: "/members" },
   { name: "Events", href: "/events" },
-  // { name: "Links", href: "/links" },
-  // { name: "Journals", href: "/journals" },
-  // { name: "Downloads", href: "/downloads" },
 ]
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
@@ -35,6 +33,11 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false)
+  }, [location])
+
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50">
@@ -43,14 +46,14 @@ export default function Navbar() {
             'transition-all duration-300 ease-in-out',
             isScrolled
               ? 'bg-slate-800/90 backdrop-blur-sm'
-              : 'bg-transparent'  // Removed pt-4 from here
+              : 'bg-transparent'
           )}
         >
           <div className="container mx-auto px-4">
             <div
               className={cn(
                 'flex items-center justify-between transition-all duration-300',
-                isScrolled ? 'h-16' : 'h-20' // Reduced heights to minimize gap
+                isScrolled ? 'h-16' : 'h-20'
               )}
             >
               {/* Logo */}
@@ -92,8 +95,8 @@ export default function Navbar() {
                 </NavigationMenu>
               </div>
 
-              {/* Search button */}
-              <div className="flex items-center">
+              {/* Mobile Menu and Search Buttons */}
+              <div className="flex items-center space-x-2">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -103,6 +106,43 @@ export default function Navbar() {
                   <Search className="h-5 w-5" />
                   <span className="sr-only">Search</span>
                 </Button>
+                
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="text-white lg:hidden"
+                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                  {isMobileMenuOpen ? (
+                    <X className="h-5 w-5" />
+                  ) : (
+                    <Menu className="h-5 w-5" />
+                  )}
+                  <span className="sr-only">Menu</span>
+                </Button>
+              </div>
+            </div>
+
+            {/* Mobile Navigation Menu */}
+            <div
+              className={cn(
+                "lg:hidden transition-all duration-300 ease-in-out overflow-hidden",
+                isMobileMenuOpen ? "max-h-96" : "max-h-0"
+              )}
+            >
+              <div className="space-y-2 pb-4">
+                {navigationItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={cn(
+                      "block px-4 py-2 text-sm font-medium text-white rounded-md hover:bg-slate-700",
+                      location.pathname === item.href && "bg-slate-700/50"
+                    )}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
               </div>
             </div>
           </div>
@@ -122,11 +162,11 @@ export default function Navbar() {
         >
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/30 to-slate-900/10" />
           {/* Hero Text */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white">
-            <h1 className="mb-4 text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl">
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
+            <h1 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
               Bangalore Orthopedics Society
             </h1>
-            <p className="text-xl font-medium md:text-2xl lg:text-3xl">
+            <p className="text-lg font-medium sm:text-xl md:text-2xl lg:text-3xl">
               Advancing Orthopedic Excellence Through Innovation and Collaboration
             </p>
           </div>
