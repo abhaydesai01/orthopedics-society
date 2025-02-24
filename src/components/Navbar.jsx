@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Search, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Button } from './ui/Button'
-import { SearchModal } from './SearchModal'
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -15,13 +14,12 @@ const navigationItems = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about-us" },
   { name: "Office Bearers", href: "/office-bearers" },
-  { name: "Members", href: "/members" },
+  // { name: "Members", href: "/members" },
   { name: "Events", href: "/events" },
 ]
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
 
@@ -95,18 +93,8 @@ export default function Navbar() {
                 </NavigationMenu>
               </div>
 
-              {/* Mobile Menu and Search Buttons */}
-              <div className="flex items-center space-x-2">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-white"
-                  onClick={() => setIsSearchOpen(true)}
-                >
-                  <Search className="h-5 w-5" />
-                  <span className="sr-only">Search</span>
-                </Button>
-                
+              {/* Mobile Menu Button - Search Button Removed */}
+              <div className="flex items-center">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -173,8 +161,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Search Modal */}
-      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+      {/* Search Modal - Removed */}
     </>
   )
 }

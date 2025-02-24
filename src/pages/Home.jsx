@@ -21,6 +21,7 @@ export default function Home() {
       buttons: [
         { text: "Download Brochure", link: "/BOSCON 2025 BROCHURE .pdf", primary: true },
         { text: "Click Here for More Info", link: "/Trade brochure BOSCON 25.pdf", secondary: true },
+        { text: "Register Now", link: "https://docs.google.com/forms/d/e/1FAIpQLSeudIyNIKLZMtIgA8hrzGDAosZWloNrTgKbiJyxi93tiDuOdg/viewform?usp=dialog", primary: true },
       ],
     },
     {
@@ -107,6 +108,8 @@ export default function Home() {
                 <a
                   key={index}
                   href={button.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`px-4 py-2 md:px-6 md:py-3 text-sm md:text-base font-semibold rounded transition-colors duration-200 ${button.primary
                       ? "bg-yellow-400 text-gray-800 hover:bg-yellow-500"
                       : button.secondary
@@ -210,25 +213,26 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-2">
             {/* Left Column - Registration Details */}
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-blue-700">For New Registration NEFT details</h2>
+              <h2 className="text-3xl font-bold text-blue-700">Membership Application Form</h2>
 
               <a
-                href="/registration-form.pdf"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSdf8poSTSDLZmgUnulJb4W4j1D6f7lBeec4osxlCviUGM0tMQ/viewform"
                 className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Download className="h-5 w-5" />
-                Download Registration Form
+              Registration Form
               </a>
 
               <p className="text-gray-700">
                 Mail your Registration form to{" "}
-                <a href="mailto:mangalorecos@gmail.com" className="text-blue-600 hover:text-blue-700">
-                  mangalorecos@gmail.com
+                <a href="mailto:membership.bos@gmail.com" className="text-blue-600 hover:text-blue-700">
+                  membership.bos@gmail.com
                 </a>
               </p>
 
               <div className="space-y-3 text-gray-700">
-                <p>CANARA ORTHOPAEDIC SOCIETY</p>
+                <p>BANGLORE ORTHOPAEDIC SOCIETY</p>
                 <p>Canara Bank</p>
                 <p>SB A/C No.- 01002010024325</p>
                 <p>IFSC Code.- CNRB0010239</p>

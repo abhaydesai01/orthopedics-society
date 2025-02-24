@@ -6,17 +6,17 @@ const Events = () => {
       id: 1,
       image: "/le.png",
       title: "Cricket League",
-      // description: "Description for Event 1. Add your event details here.",
       date: "March 16, 2025",
-      location: "MVIT Cricket Ground,Velahanka"
+      location: "MVIT Cricket Ground,Velahanka",
+      registrationLink: "#"
     },
     {
       id: 2,
       image: "/image_m.png",
       title: "BOSCON-2025",
-      // description: "Description for Event 2. Add your event details here.",
       date: "April 5, 2025",
-      location: "City Convention Center"
+      location: "City Convention Center",
+      registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeudIyNIKLZMtIgA8hrzGDAosZWloNrTgKbiJyxi93tiDuOdg/viewform"
     }
   ];
 
@@ -57,9 +57,20 @@ const Events = () => {
                   {event.description}
                 </p>
                 
-                <button className="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-fit">
-                  Register Now
-                </button>
+                {event.title === "BOSCON-2025" ? (
+                  <a 
+                    href={event.registrationLink} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-fit inline-block"
+                  >
+                    Register Now
+                  </a>
+                ) : (
+                  <button className="bg-blue-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-700 transition-colors duration-300 w-fit">
+                    Register Now
+                  </button>
+                )}
               </div>
             </div>
             
