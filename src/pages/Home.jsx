@@ -11,7 +11,7 @@ export default function Home() {
   const slides = [
     {
       title: "",
-      image: "/image_m.png", 
+      image: "/image_m.png",
       subtitle: [
         "BOSCON 2025",
         "28th Annual Conference of Banglore Orthopaedic Association",
@@ -45,7 +45,7 @@ export default function Home() {
       customBackground: "/image_1.jpg"
     }
   ];
-  
+
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
   };
@@ -93,7 +93,7 @@ export default function Home() {
                   {slides[currentSlide].subtitle}
                 </p>
               )}
-              {slides[currentSlide].details && 
+              {slides[currentSlide].details &&
                 slides[currentSlide].details.map((detail, index) => (
                   <p key={index} className="text-lg md:text-xl text-white mb-2">
                     {detail}
@@ -101,19 +101,18 @@ export default function Home() {
                 ))
               }
             </>
-            
+
             <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 mt-4">
               {slides[currentSlide].buttons.map((button, index) => (
                 <a
                   key={index}
                   href={button.link}
-                  className={`px-4 py-2 md:px-6 md:py-3 text-sm md:text-base font-semibold rounded transition-colors duration-200 ${
-                    button.primary
+                  className={`px-4 py-2 md:px-6 md:py-3 text-sm md:text-base font-semibold rounded transition-colors duration-200 ${button.primary
                       ? "bg-yellow-400 text-gray-800 hover:bg-yellow-500"
                       : button.secondary
-                      ? "bg-gray-600 text-white hover:bg-gray-700"
-                      : "bg-white text-gray-800 hover:bg-gray-100"
-                  }`}
+                        ? "bg-gray-600 text-white hover:bg-gray-700"
+                        : "bg-white text-gray-800 hover:bg-gray-100"
+                    }`}
                 >
                   {button.text}
                 </a>
@@ -142,9 +141,8 @@ export default function Home() {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-                currentSlide === index ? "bg-white" : "bg-gray-400"
-              }`}
+              className={`w-3 h-3 rounded-full transition-colors duration-200 ${currentSlide === index ? "bg-white" : "bg-gray-400"
+                }`}
               aria-label={`Go to slide ${index + 1}`}
             />
           ))}
@@ -157,22 +155,23 @@ export default function Home() {
           <div className="grid gap-8 md:grid-cols-2">
             <div className="h-full w-full">
               <img
-                src="/images4.jpeg"
+                src="/image18.jpg"
                 alt="COS Team"
-                className="h-full w-full rounded-lg object-cover shadow-lg"
+                className="h-auto max-h-96 w-auto max-w-full rounded-lg object-cover shadow-lg mx-auto"
               />
             </div>
             <div className="flex flex-col justify-center">
               <h2 className="mb-6 text-3xl font-bold text-blue-700">President's Message</h2>
               <p className="mb-4 text-gray-700">
-                Esteemed Members of COS,
+                Dear Colleagues and Friends,
               </p>
               <p className="mb-4 text-gray-700">
-                Happy to take over as the president with the team, Dr. Sudeep Shetty, Dr. Rizwan Ahmed, Dr. Rajendra A, & Dr. Sumanth Nayak for the year 2024-25
+                It is my privilege and honor to serve as the President of the Bangalore Orthopaedic Society (BOS), an esteemed organization dedicated to the pursuit of excellence in orthopaedic education, research, and clinical practice.
+
               </p>
-              <p className="mb-4 text-gray-700">
+              {/* <p className="mb-4 text-gray-700">
                 On behalf of all members, we congratulate the team for the year 23-24 lead ably by Dr. Deepak Rai, Dr. Shailesh Pai, Dr. Fahim & Dr. Navaneeth Kamath for the enormous achievements...
-              </p>
+              </p> */}
               <Link to="/presidentsmessage" className="text-blue-600 hover:text-blue-700">
                 Read More →
               </Link>
@@ -212,22 +211,22 @@ export default function Home() {
             {/* Left Column - Registration Details */}
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-blue-700">For New Registration NEFT details</h2>
-              
-              <a 
-                href="/registration-form.pdf" 
+
+              <a
+                href="/registration-form.pdf"
                 className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors"
               >
                 <Download className="h-5 w-5" />
                 Download Registration Form
               </a>
-              
+
               <p className="text-gray-700">
                 Mail your Registration form to{" "}
                 <a href="mailto:mangalorecos@gmail.com" className="text-blue-600 hover:text-blue-700">
                   mangalorecos@gmail.com
                 </a>
               </p>
-              
+
               <div className="space-y-3 text-gray-700">
                 <p>CANARA ORTHOPAEDIC SOCIETY</p>
                 <p>Canara Bank</p>
@@ -236,7 +235,7 @@ export default function Home() {
                 <p>Registration Fees- Rs.1500/-</p>
               </div>
             </div>
-            
+
             {/* Right Column - QR Code */}
             <div className="flex items-center justify-center">
               <img
