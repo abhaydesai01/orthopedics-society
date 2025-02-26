@@ -142,7 +142,7 @@ export default function Navbar() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/image7.png')",
+            backgroundImage: "url('/imagexy.jpg')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
