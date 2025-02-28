@@ -233,9 +233,9 @@ export default function Home() {
 
               <div className="space-y-3 text-gray-700">
                 <p>BANGLORE ORTHOPAEDIC SOCIETY</p>
-                <p>Canara Bank</p>
-                <p>SB A/C No.- 01002010024325</p>
-                <p>IFSC Code.- CNRB0010239</p>
+                <p>KARNATAKA BANK LIMITED</p>
+                <p>SB A/C No.- 0612500102803601</p>
+                <p>IFSC Code.- KARB0000058</p>
                 <p>Registration Fees- Rs.1500/-</p>
               </div>
             </div>

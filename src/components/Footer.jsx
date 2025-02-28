@@ -93,11 +93,11 @@ export function Footer() {
               </div>
               
               <div className="space-y-2 text-gray-300">
-                <p className="font-medium">Canara Orthopaedic Society</p>
+                <p className="font-medium">Banglore Orthopaedic Society</p>
                 <div className="space-y-1 text-sm">
-                  <p>Bank: Canara Bank</p>
-                  <p>A/C No: 0100201002432</p>
-                  <p>IFSC Code: CNRB0010239</p>
+                  <p>Bank: KARNATAKA BANK LTD.</p>
+                  <p>A/C No: 0612500102803601</p>
+                  <p>IFSC Code: KARB0000058</p>
                 </div>
               </div>
             </div>

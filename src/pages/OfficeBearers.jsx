@@ -5,8 +5,8 @@ export default function OfficeBearers() {
     <div className="container mx-auto px-4 py-8 pt-16 lg:py-16 lg:pt-24">
       <h1 className="text-3xl lg:text-4xl font-bold mb-6 lg:mb-8 text-center lg:text-left">Office Bearers</h1>
       
-      {/* First Row */}
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-6 lg:mb-8">
+      {/* Combined Office Bearers Grid - Two columns on mobile, three columns on desktop */}
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-10 lg:mb-16">
         <div className="flex flex-col items-center">
           <img src="/image18.jpg" alt="Member 1" className="w-40 h-40 lg:w-48 lg:h-48 object-cover mb-3 lg:mb-4 rounded-lg" />
           <h3 className="text-lg lg:text-xl font-semibold text-center">Dr.Avinash<br></br> (President)</h3>
@@ -19,10 +19,6 @@ export default function OfficeBearers() {
           <img src="/image131.jpg" alt="Member 3" className="w-40 h-40 lg:w-48 lg:h-48 object-cover mb-3 lg:mb-4 rounded-lg" />
           <h3 className="text-lg lg:text-xl font-semibold text-center">Dr B.Ramesh <br></br>(BOS GS)</h3>
         </div>
-      </div>
-
-      {/* Second Row */}
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-6 lg:mb-8">
         <div className="flex flex-col items-center">
           <img src="/image_cd.jpg" alt="Member 4" className="w-40 h-40 lg:w-48 lg:h-48 object-cover mb-3 lg:mb-4 rounded-lg" />
           <h3 className="text-lg lg:text-xl font-semibold text-center">Dr. Ravi Kumar<br></br>(Joint Secretary)</h3>
@@ -35,10 +31,6 @@ export default function OfficeBearers() {
           <img src="/image_b.jpg" alt="Member 6" className="w-40 h-40 lg:w-48 lg:h-48 object-cover mb-3 lg:mb-4 rounded-lg" />
           <h3 className="text-lg lg:text-xl font-semibold text-center">Dr.Raju KP</h3>
         </div>
-      </div>
-
-      {/* Third Row */}
-      <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-6 lg:mb-8">
         <div className="flex flex-col items-center">
           <img src="/image_ab.jpg" alt="Member 7" className="w-40 h-40 lg:w-48 lg:h-48 object-cover mb-3 lg:mb-4 rounded-lg" />
           <h3 className="text-lg lg:text-xl font-semibold text-center">Dr.Venu Madhav</h3>
@@ -51,10 +43,6 @@ export default function OfficeBearers() {
           <img src="/image_gh.jpg" alt="Member 9" className="w-40 h-40 lg:w-48 lg:h-48 object-cover mb-3 lg:mb-4 rounded-lg" />
           <h3 className="text-lg lg:text-xl font-semibold text-center">Dr. Saraswathi</h3>
         </div>
-      </div>
-
-      {/* Fourth Row - 4 Images */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-10 lg:mb-16">
         <div className="flex flex-col items-center">
           <img src="/image_k.jpg" alt="Member 10" className="w-40 h-40 lg:w-48 lg:h-48 object-cover mb-3 lg:mb-4 rounded-lg" />
           <h3 className="text-lg lg:text-xl font-semibold text-center">Dr. Rudra Prasad</h3>
