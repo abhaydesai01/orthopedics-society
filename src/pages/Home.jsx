@@ -236,7 +236,7 @@ export default function Home() {
                 <p>KARNATAKA BANK LIMITED</p>
                 <p>SB A/C No.- 0612500102803601</p>
                 <p>IFSC Code.- KARB0000058</p>
-                <p>Registration Fees- Rs.1500/-</p>
+                <p>Registration Fees- Rs.2000/-</p>
               </div>
             </div>
 

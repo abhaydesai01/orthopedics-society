@@ -4,9 +4,9 @@ import Navbar from "./components/Navbar"
 import { Footer } from "./components/Footer"
 import { WelcomePopup } from "./components/WelcomePopUp"
 import Home from "./pages/Home"
-import AboutUs from "./pages/AboutUs"
+import AboutUs from "./pages/AboutUS"
 import OfficeBearers from "./pages/OfficeBearers"
-// import Members from "./pages/Members"
+import Gallery from "./pages/gallery"
 import Events from "./pages/Events"
 import Links from "./pages/Links"
 import Journals from "./pages/Journals"
@@ -25,7 +25,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/office-bearers" element={<OfficeBearers />} />
-            {/* <Route path="/members" element={<Members />} /> */}
+            <Route path="/gallery" element={<Gallery />} />
             <Route path="/events" element={<Events />} />
             <Route path="/links" element={<Links />} />
             <Route path="/journals" element={<Journals />} />

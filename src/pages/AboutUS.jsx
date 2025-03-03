@@ -11,11 +11,18 @@ export default function AboutUs() {
         {/* Left side - Single Image */}
         <div className="md:w-1/3 mb-6 md:mb-0">
           <div className="w-full aspect-square bg-gray-200 rounded-lg overflow-hidden">
-            <img 
-              src="/image131.jpg" 
-              alt="BOS Official"
-              className="w-full h-full object-cover"
-            />
+            <picture>
+              {/* Mobile image (displays on smaller screens) */}
+              <source media="(max-width: 767px)" srcSet="/image1y.jpg" />
+              {/* Desktop image (displays on medium screens and larger) */}
+              <source media="(min-width: 768px)" srcSet="/image1x.jpg" />
+              {/* Fallback image if picture tag is not supported */}
+              <img 
+                src="/image1x.jpg" 
+                alt="BOS Official"
+                className="w-full h-full object-cover"
+              />
+            </picture>
           </div>
         </div>
 

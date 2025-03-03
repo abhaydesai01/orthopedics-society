@@ -14,7 +14,7 @@ const navigationItems = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "/about-us" },
   { name: "Office Bearers", href: "/office-bearers" },
-  // { name: "Members", href: "/members" },
+  { name: "Gallery", href: "/gallery" },
   { name: "Events", href: "/events" },
 ]
 
@@ -22,13 +22,24 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const location = useLocation()
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
     }
+    
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleResize)
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+    }
   }, [])
 
   // Close mobile menu when route changes
@@ -142,7 +153,7 @@ export default function Navbar() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/imagexy.jpg')",
+            backgroundImage: `url('${isMobile ? '/image1z.jpg' : '/image1y.jpg'}')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat'
