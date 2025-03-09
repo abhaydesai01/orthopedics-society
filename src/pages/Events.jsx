@@ -7,7 +7,7 @@ const Events = () => {
       image: "/le.png",
       title: "Cricket League",
       date: "March 16, 2025",
-      location: "MVIT Cricket Ground,Velahanka",
+      location: "MVIT Cricket Ground,yelahanka",
       registrationLink: "#"
     },
     {
@@ -15,7 +15,7 @@ const Events = () => {
       image: "/image_m.png",
       title: "BOSCON-2025",
       date: "April 5, 2025",
-      location: "City Convention Center",
+      location: "NIMHANS CONVENTION CENTRE",
       registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeudIyNIKLZMtIgA8hrzGDAosZWloNrTgKbiJyxi93tiDuOdg/viewform"
     }
   ];
