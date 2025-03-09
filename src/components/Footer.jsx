@@ -59,7 +59,7 @@ export function Footer() {
                 <div className="flex items-center space-x-3">
                   <Globe className="h-5 w-5 text-sky-400 flex-shrink-0" />
                   <a 
-                    href="http://www.bangaloreorthopaedicsociety.com" 
+                    href="https://bosbengaluru.org/" 
                     target="_blank" 
                     rel="noopener noreferrer" 
                     className="text-sky-400 hover:text-sky-300 transition-colors"
