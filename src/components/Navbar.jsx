@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
-import { Button } from './ui/Button'
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "./ui/Button";
 import {
   NavigationMenu,
   NavigationMenuList,
   NavigationMenuItem,
   NavigationMenuLink,
-} from './ui/NavigationMenu'
-import { cn } from '../lib/utils'
-import { Link, useLocation } from 'react-router-dom'
+} from "./ui/NavigationMenu";
+import { cn } from "../lib/utils";
+import { Link, useLocation } from "react-router-dom";
 
 const navigationItems = [
   { name: "Home", href: "/" },
@@ -16,53 +16,52 @@ const navigationItems = [
   { name: "Office Bearers", href: "/office-bearers" },
   { name: "Gallery", href: "/gallery" },
   { name: "Events", href: "/events" },
-]
+  { name: "Circulars", href: "/circulars" },
+];
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const location = useLocation()
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    
+      setIsScrolled(window.scrollY > 50);
+    };
+
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-    
-    window.addEventListener('scroll', handleScroll)
-    window.addEventListener('resize', handleResize)
-    
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleResize);
+
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   // Close mobile menu when route changes
   useEffect(() => {
-    setIsMobileMenuOpen(false)
-  }, [location])
+    setIsMobileMenuOpen(false);
+  }, [location]);
 
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50">
         <nav
           className={cn(
-            'transition-all duration-300 ease-in-out',
-            isScrolled
-              ? 'bg-slate-800/90 backdrop-blur-sm'
-              : 'bg-transparent'
+            "transition-all duration-300 ease-in-out",
+            isScrolled ? "bg-slate-800/90 backdrop-blur-sm" : "bg-transparent"
           )}
         >
           <div className="container mx-auto px-4">
             <div
               className={cn(
-                'flex items-center justify-between transition-all duration-300',
-                isScrolled ? 'h-16' : 'h-20'
+                "flex items-center justify-between transition-all duration-300",
+                isScrolled ? "h-24" : "h-20"
               )}
             >
               {/* Logo */}
@@ -71,12 +70,12 @@ export default function Navbar() {
                   src="/logo.jpg"
                   alt="Medico Healthcare"
                   className={cn(
-                    'object-contain transition-all duration-300',
-                    isScrolled ? 'h-12 w-auto' : 'h-16 w-auto'
+                    "object-contain transition-all duration-300",
+                    isScrolled ? "h-20 w-auto" : "h-20 w-auto"
                   )}
                   onError={(e) => {
-                    e.currentTarget.src = '/fallback-logo.png'
-                    console.error('Error loading logo image')
+                    e.currentTarget.src = "/fallback-logo.png";
+                    console.error("Error loading logo image");
                   }}
                 />
               </Link>
@@ -92,7 +91,8 @@ export default function Navbar() {
                             className={cn(
                               "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-slate-700 hover:text-white focus:bg-slate-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50",
                               "text-white",
-                              location.pathname === item.href && "bg-slate-700/50",
+                              location.pathname === item.href &&
+                                "bg-slate-700/50"
                             )}
                           >
                             {item.name}
@@ -153,10 +153,12 @@ export default function Navbar() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('${isMobile ? '/image1z.jpg' : '/image1y.jpg'}')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
+            backgroundImage: `url('${
+              isMobile ? "/image1z.jpg" : "/image1y.jpg"
+            }')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/30 to-slate-900/10" />
@@ -166,7 +168,8 @@ export default function Navbar() {
               Bangalore Orthopedics Society
             </h1>
             <p className="text-lg font-medium sm:text-xl md:text-2xl lg:text-3xl">
-              Advancing Orthopedic Excellence Through Innovation and Collaboration
+              Advancing Orthopedic Excellence Through Innovation and
+              Collaboration
             </p>
           </div>
         </div>
@@ -174,5 +177,5 @@ export default function Navbar() {
 
       {/* Search Modal - Removed */}
     </>
-  )
+  );
 }
