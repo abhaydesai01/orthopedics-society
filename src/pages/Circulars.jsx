@@ -62,7 +62,18 @@ const Circulars = () => {
                   download
                   className="text-gray-700 group-hover:text-gray-900 font-medium"
                 >
-                  Download BOS Circular
+                  Download AGM Circular
+                </a>
+              </li>
+            </ul>
+            <ul className="space-y-4 ">
+              <li className="group border-y-[1px] hover:bg-gray-200 border-gray-300  p-3">
+                <a
+                  href="/egm.pdf"
+                  download
+                  className="text-gray-700 group-hover:text-gray-900 font-medium"
+                >
+                  Download EGM Circular
                 </a>
               </li>
             </ul>

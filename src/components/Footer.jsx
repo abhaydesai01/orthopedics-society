@@ -1,5 +1,5 @@
+import { CreditCard, Globe, Mail, MapPin, Phone } from 'lucide-react'
 import React from 'react'
-import { Mail, Phone, MapPin, Globe, CreditCard } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -64,7 +64,7 @@ export function Footer() {
                     rel="noopener noreferrer" 
                     className="text-sky-400 hover:text-sky-300 transition-colors"
                   >
-                    www.bangaloreorthopaedicsociety.com
+                    www.bosbengaluru.org
                   </a>
                 </div>
                 
