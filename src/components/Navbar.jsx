@@ -1,14 +1,14 @@
-import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { cn } from "../lib/utils";
 import { Button } from "./ui/Button";
 import {
   NavigationMenu,
-  NavigationMenuList,
   NavigationMenuItem,
   NavigationMenuLink,
+  NavigationMenuList,
 } from "./ui/NavigationMenu";
-import { cn } from "../lib/utils";
-import { Link, useLocation } from "react-router-dom";
 
 const navigationItems = [
   { name: "Home", href: "/" },
@@ -87,16 +87,15 @@ export default function Navbar() {
                     {navigationItems.map((item) => (
                       <NavigationMenuItem key={item.name}>
                         <Link to={item.href}>
-                          <NavigationMenuLink
-                            className={cn(
-                              "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-slate-700 hover:text-white focus:bg-slate-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50",
-                              "text-white",
-                              location.pathname === item.href &&
-                                "bg-slate-700/50"
-                            )}
-                          >
-                            {item.name}
-                          </NavigationMenuLink>
+                        <NavigationMenuLink
+  className={cn(
+    "group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors",
+    "hover:bg-slate-700 hover:text-white focus:bg-slate-700 focus:text-white focus:outline-none disabled:pointer-events-none disabled:opacity-50",
+    isScrolled ? "bg-black text-white" : "text-black"
+  )}
+>
+  {item.name}
+</NavigationMenuLink>
                         </Link>
                       </NavigationMenuItem>
                     ))}
@@ -109,7 +108,7 @@ export default function Navbar() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white lg:hidden"
+                  className="text-black lg:hidden"
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                   {isMobileMenuOpen ? (
@@ -135,7 +134,7 @@ export default function Navbar() {
                     key={item.name}
                     to={item.href}
                     className={cn(
-                      "block px-4 py-2 text-sm font-medium text-white rounded-md hover:bg-slate-700",
+                      "block px-4 py-2 text-sm font-medium text-black rounded-md hover:bg-slate-700",
                       location.pathname === item.href && "bg-slate-700/50"
                     )}
                   >
@@ -148,32 +147,16 @@ export default function Navbar() {
         </nav>
       </header>
 
-      {/* Hero Section with Text Overlay */}
-      <div className="relative h-[100vh]">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('${
-              isMobile ? "/image1z.jpg" : "/image1y.jpg"
-            }')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/30 to-slate-900/10" />
-          {/* Hero Text */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4">
-            <h1 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
-              Bangalore Orthopedics Society
-            </h1>
-            <p className="text-lg font-medium sm:text-xl md:text-2xl lg:text-3xl">
-              Advancing Orthopedic Excellence Through Innovation and
-              Collaboration
-            </p>
-          </div>
-        </div>
-      </div>
+      {/* Hero Section with Light Blue Background */}
+<div className="relative h-[100vh] bg-blue-100 flex flex-col items-center justify-center text-center px-4">
+  {/* Hero Text */}
+  <h1 className="mb-4 text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-gray-900">
+    Bangalore Orthopedic Society
+  </h1>
+  <p className="text-lg font-medium sm:text-xl md:text-2xl lg:text-3xl text-gray-700">
+    Advancing Orthopedic Excellence Through Innovation and Collaboration
+  </p>
+</div>
 
       {/* Search Modal - Removed */}
     </>

@@ -24,7 +24,7 @@ export function WelcomePopup() {
         {/* Image Section */}
         <div className="w-full flex flex-col items-center">
           <img
-            src="le.jpeg"
+            src="image_ol.png"
             alt="PKC 2025 Event Banner"
             className="w-full max-h-96 object-contain rounded-t-lg"
           />
