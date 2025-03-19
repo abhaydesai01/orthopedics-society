@@ -84,7 +84,7 @@ const Circulars = () => {
                   download
                   className="text-gray-700 group-hover:text-gray-900 font-medium"
                 >
-                  Download Bylaws Circular
+                  Download Proposed Bylaws Circular
                 </a>
               </li>
             </ul>

@@ -1,7 +1,6 @@
-import React from "react"
-import { Link } from 'react-router-dom'
-import { Download, ChevronLeft, ChevronRight } from "lucide-react"
-import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -22,6 +21,13 @@ export default function Home() {
         { text: "Download Brochure", link: "/BOSCON 2025 BROCHURE .pdf", primary: true },
         { text: "Click Here for More Info", link: "/Trade brochure BOSCON 25.pdf", secondary: true },
         { text: "Register Now", link: "https://docs.google.com/forms/d/e/1FAIpQLSeudIyNIKLZMtIgA8hrzGDAosZWloNrTgKbiJyxi93tiDuOdg/viewform?usp=dialog", primary: true },
+      ],
+    },
+    {
+      title: "",
+      image: "/circl.jpeg",
+      buttons: [
+        { text: "Download Proposed Bylaws", link: "/bylaws.pdf", primary: true },
       ],
     },
     {
@@ -72,11 +78,15 @@ export default function Home() {
           <div className="text-center z-10">
             <>
               {slides[currentSlide].image && (
-                <img
-                  src={slides[currentSlide].image}
-                  alt={slides[currentSlide].title || slides[currentSlide].subtitle?.[0]}
-                  className="mx-auto mb-4 h-32 md:h-40 lg:h-48 rounded-lg bg-white p-2"
-                />
+                 <img
+                 src={slides[currentSlide].image}
+                 alt="Slide Image"
+                 className={
+                   slides[currentSlide].image === "/circl.jpeg"
+                     ? "w-[400px] h-[400px] mx-auto"
+                     : "mx-auto mb-4 h-32 md:h-40 lg:h-48 rounded-lg bg-white p-2"
+                 }
+               />
               )}
               {slides[currentSlide].title && (
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-white">

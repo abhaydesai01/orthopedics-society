@@ -105,43 +105,48 @@ export default function Navbar() {
 
               {/* Mobile Menu Button - Search Button Removed */}
               <div className="flex items-center">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-black lg:hidden"
-                  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                >
-                  {isMobileMenuOpen ? (
-                    <X className="h-5 w-5" />
-                  ) : (
-                    <Menu className="h-5 w-5" />
-                  )}
-                  <span className="sr-only">Menu</span>
-                </Button>
-              </div>
+  <Button
+    variant="ghost"
+    size="icon"
+    className={cn(
+      "lg:hidden transition-colors duration-300", 
+      isScrolled ? "text-white" : "text-black"
+    )}
+    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+  >
+    {isMobileMenuOpen ? (
+      <X className="h-5 w-5" />
+    ) : (
+      <Menu className="h-5 w-5" />
+    )}
+    <span className="sr-only">Menu</span>
+  </Button>
+</div>
             </div>
 
             {/* Mobile Navigation Menu */}
             <div
-              className={cn(
-                "lg:hidden transition-all duration-300 ease-in-out overflow-hidden",
-                isMobileMenuOpen ? "max-h-96" : "max-h-0"
-              )}
-            >
-              <div className="space-y-2 pb-4">
-                {navigationItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className={cn(
-                      "block px-4 py-2 text-sm font-medium text-black rounded-md hover:bg-slate-700",
-                      location.pathname === item.href && "bg-slate-700/50"
-                    )}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
+  className={cn(
+    "lg:hidden transition-all duration-300 ease-in-out overflow-hidden",
+    isMobileMenuOpen ? "max-h-96" : "max-h-0"
+  )}
+>
+  <div className="space-y-2 pb-4">
+    {navigationItems.map((item) => (
+      <Link
+        key={item.name}
+        to={item.href}
+        className={cn(
+          "block px-4 py-2 text-sm font-medium rounded-md transition-colors duration-300",
+          isScrolled ? "text-white hover:bg-slate-700" : "text-black hover:bg-gray-200",
+          location.pathname === item.href && "bg-slate-700/50"
+        )}
+      >
+        {item.name}
+      </Link>
+    ))}
+  </div>
+
             </div>
           </div>
         </nav>
