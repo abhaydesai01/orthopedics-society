@@ -32,7 +32,7 @@ export function WelcomePopup() {
 
         {/* Content Section */}
         <div className="p-6 text-center">
-          <h2 className="text-2xl font-bold mb-4">Welcome to BOSPL 2025</h2>
+          <h2 className="text-2xl font-bold mb-4">Welcome to BOSCON 2025</h2>
           <p className="text-gray-600 mb-6">Join us for an unforgettable experience. Register now!</p>
           
           {/* Register Button */}
